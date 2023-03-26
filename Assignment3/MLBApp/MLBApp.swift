@@ -8,10 +8,13 @@
 import SwiftUI
 
 @main
-struct Assignment3App: App {
+struct MLBApp: App {
+    @StateObject private var dataProvider = MLBViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PlayerListView()
+                .environmentObject(dataProvider)
         }
     }
 }
